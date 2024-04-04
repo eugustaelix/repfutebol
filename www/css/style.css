@@ -1,0 +1,45 @@
+/**/
+body {
+  background-image: url("campo.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.select-circulo {
+  background: rgb(255, 255, 255);
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  overflow: hidden;   
+}
+
+.select-circulo select {
+  background: rgb(255, 255, 255);
+  color: transparent;
+  width: 45px;
+  height: 45px;
+  line-height: 50px; 
+  text-align: center;
+  outline: none;
+  border: none;
+}
+
+button {
+    font-family: "Poppins", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+    box-shadow: 0px 5px 20px #00000033;
+    background-color: greenyellow;
+    color: black;
+    padding-block: 0.5rem;
+    padding-inline: 1.25rem;
+    border-radius: 9999px;
+    border: none;
+    width: 130px;
+  }
+  .vermelho{
+    background-color: #ff013c ;  
+    color: white;  
+  }
+  
+

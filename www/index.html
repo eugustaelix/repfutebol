@@ -1,0 +1,124 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta http-equiv="Content-Security-Policy" content="default-src * data: gap: content: https://ssl.gstatic.com; style-src * 'unsafe-inline'; script-src * 'unsafe-inline' 'unsafe-eval'">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="components/loader.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <script>
+        $(document).ready(function() {
+            $('#opcoes').change(function() {
+                var opcaoSelecionada = $(this).val();
+                
+                switch (opcaoSelecionada) {
+                    case 'opcao0':
+                        $('.select-circulo select').css('background-image', 'url("padrao.png")');
+                        break;
+                    case 'opcao1':
+                        $('.select-circulo select').css('background-image', 'url("tela1.png")');
+                        break;
+                    case 'opcao2':
+                        $('.select-circulo select').css('background-color', 'blue');
+                        break;
+                }
+            });
+        });
+    </script>
+
+    <div name="goleiro" class="select-circulo" style="position: absolute; left: 184px; top: 723px;">
+        <select id="opcoes">
+            <option value="opcao0">Nenhum selecionado</option>
+            <option value="opcao1">Opção 1</option>
+            <option value="opcao2">Opção 2</option>
+        </select>
+    </div>
+
+    <div name="jogador1" class="select-circulo" style="position: absolute; left: 56px; top: 565px;">
+        <select id="opcoes">
+            <option value="opcao0">Nenhum selecionado</option>
+            <option value="opcao1">Opção 1</option>
+            <option value="opcao2">Opção 2</option>
+        </select>
+    </div>
+
+    <div name="jogador2" class="select-circulo" style="position: absolute; left: 140px; top: 565px;">
+        <select id="opcoes">
+            <option value="opcao0">Nenhum selecionado</option>
+            <option value="opcao1">Opção 1</option>
+            <option value="opcao2">Opção 2</option>
+        </select>
+    </div>
+
+    <div name="jogador3" class="select-circulo" style="position: absolute; left: 224px; top: 565px;">
+        <select id="opcoes">
+            <option value="opcao0">Nenhum selecionado</option>
+            <option value="opcao1">Opção 1</option>
+            <option value="opcao2">Opção 2</option>
+        </select>
+    </div>
+
+    <div name="jogador4" class="select-circulo" style="position: absolute; left: 308px; top: 565px;">
+        <select id="opcoes">
+            <option value="opcao0">Nenhum selecionado</option>
+            <option value="opcao1">Opção 1</option>
+            <option value="opcao2">Opção 2</option>
+        </select>
+    </div>
+
+    <div name="jogador5" class="select-circulo" style="position: absolute; left: 90px; top: 423px;">
+        <select id="opcoes">
+            <option value="opcao0">Nenhum selecionado</option>
+            <option value="opcao1">Opção 1</option>
+            <option value="opcao2">Opção 2</option>
+        </select>
+    </div>
+
+    <div name="jogador6" class="select-circulo" style="position: absolute; left: 184px; top: 423px;">
+        <select id="opcoes">
+            <option value="opcao0">Nenhum selecionado</option>
+            <option value="opcao1">Opção 1</option>
+            <option value="opcao2">Opção 2</option>
+        </select>
+    </div>
+        
+    <div name="jogador7" class="select-circulo" style="position: absolute; left: 278px; top: 423px;">
+        <select id="opcoes">
+            <option value="opcao0">Nenhum selecionado</option>
+            <option value="opcao1">Opção 1</option>
+            <option value="opcao2">Opção 2</option>
+        </select>
+    </div>
+
+    <div name="jogador8" class="select-circulo" style="position: absolute; left: 90px; top: 270px;">
+        <select id="opcoes">
+            <option value="opcao0">Nenhum selecionado</option>
+            <option value="opcao1">Opção 1</option>
+            <option value="opcao2">Opção 2</option>
+        </select>
+    </div>
+
+    <div name="jogador9" class="select-circulo" style="position: absolute; left: 184px; top: 270px;">
+        <select id="opcoes">
+            <option value="opcao0">Nenhum selecionado</option>
+            <option value="opcao1">Opção 1</option>
+            <option value="opcao2">Opção 2</option>
+        </select>
+    </div>
+        
+    <div name="jogador10" class="select-circulo" style="position: absolute; left: 278px; top: 270px;">
+        <select id="opcoes">
+            <option value="opcao0">Nenhum selecionado</option>
+            <option value="opcao1">Opção 1</option>
+            <option value="opcao2">Opção 2</option>
+        </select>
+    </div>
+
+        <button style="position: absolute; left: 265px; top: 30px;"> Montar time </button>
+
+    <button style="position: absolute; left: 15px; top: 30px;" class="vermelho"> Limpar</button>
+</body>
+</html>
