@@ -11,258 +11,144 @@
 <body>
     <script>
         $(document).ready(function() {
-            $('#goleiro').change(function() {
-                var opcaoSelecionada = $(this).val();
-                
-                switch (opcaoSelecionada) {
-                    case 'opcao0':
-                        $('#goleiro').css('background-image', 'url("padrao.png")');
-                        break;
-                    case 'opcao1':
-                        $('#goleiro').css('background-image', 'url("goleiro/alisson.png")');
-                        break;
-                    case 'opcao2':
-                        $('#goleiro').css('background-image', 'url("goleiro/bento.png")');
-                        break;
-                    case 'opcao3':
-                        $('#goleiro').css('background-image', 'url("goleiro/cassio.png")');
-                        break;
-                }
-            });
-        });
+        $('select').on('change', function() {
+            var opcaoSelecionada = $(this).val();
+            var imagem = $(this).find('option:selected').data('caminhoimagem');
 
-        $(document).ready(function() {
-            $('#lateralesquerdo').change(function() {
-                var opcaoSelecionada = $(this).val();
-                
-                switch (opcaoSelecionada) {
-                    case 'opcao0':
-                        $('#lateralesquerdo').css('background-image', 'url("padrao.png")');
-                        break;
-                    case 'opcao1':
-                        $('#lateralesquerdo').css('background-image', 'url("lateralesquerdo/marcelo.png")');
-                        break;
-                    case 'opcao2':
-                        $('#lateralesquerdo').css('background-image', 'url("lateralesquerdo/robertocarlos.png")');
-                        break;
-                }
-            });
+            if (opcaoSelecionada === 'opcao0') {
+                $(this).css('background-image', 'url("padrao.png")');
+            } else if (opcaoSelecionada === 'opcao1') {
+                $(this).css('background-image', 'url("' + imagem + '")');
+            } else if (opcaoSelecionada === 'opcao2') {
+                $(this).css('background-image', 'url("' + imagem + '")');
+            } else if (opcaoSelecionada === 'opcao3') {
+                $(this).css('background-image', 'url("' + imagem + '")');
+            } else if (opcaoSelecionada === 'opcao4') {
+                $(this).css('background-image', 'url("' + imagem + '")');
+            } else if (opcaoSelecionada === 'opcao5') {
+                $(this).css('background-image', 'url("' + imagem + '")');
+            }
         });
-
-        $(document).ready(function() {
-            $('#zagueiro1').change(function() {
-                var opcaoSelecionada = $(this).val();
-                
-                switch (opcaoSelecionada) {
-                    case 'opcao0':
-                        $('#zagueiro1').css('background-image', 'url("padrao.png")');
-                        break;
-                    case 'opcao1':
-                        $('#zagueiro1').css('background-image', 'url("zagueiro/gil.png")');
-                        break;
-                    case 'opcao2':
-                        $('#zagueiro1').css('background-image', 'url("zagueiro/harrymaquire.png")');
-                        break;
-                    case 'opcao3':
-                        $('#zagueiro1').css('background-image', 'url("zagueiro/maldini.png")');
-                        break;
-                    case 'opcao4':
-                        $('#zagueiro1').css('background-image', 'url("zagueiro/pique.png")');
-                        break;
-                    case 'opcao5':
-                        $('#zagueiro1').css('background-image', 'url("zagueiro/sergioramos.png")');
-                        break;
-                }
-            });
+         $('#limpar').on('click', function() {
+            $('select').val('opcao0').trigger('change');
         });
-
-        $(document).ready(function() {
-            $('#lateraldireito').change(function() {
-                var opcaoSelecionada = $(this).val();
-                
-                switch (opcaoSelecionada) {
-                    case 'opcao0':
-                        $('#lateraldireito').css('background-image', 'url("padrao.png")');
-                        break;
-                    case 'opcao1':
-                        $('#lateraldireito').css('background-image', 'url("lateraldireito/cafu.png")');
-                        break;
-                    case 'opcao2':
-                        $('#lateraldireito').css('background-image', 'url("lateraldireito/danielalves.png")');
-                        break;
-                }
-            });
-        });
-
-        $(document).ready(function() {
-            $('#meio1').change(function() {
-                var opcaoSelecionada = $(this).val();
-                
-                switch (opcaoSelecionada) {
-                    case 'opcao0':
-                        $('#meio1').css('background-image', 'url("padrao.png")');
-                        break;
-                    case 'opcao1':
-                        $('#meio1').css('background-image', 'url("meio/casemiro.png")');
-                        break;
-                    case 'opcao2':
-                        $('#meio1').css('background-image', 'url("meio/modric.png")');
-                        break;
-                    case 'opcao3':
-                        $('#meio1').css('background-image', 'url("meio/ralf.png")');
-                        break;
-                    case 'opcao4':
-                        $('#meio1').css('background-image', 'url("meio/tonikroos.png")');
-                        break;
-                    case 'opcao5':
-                        $('#meio1').css('background-image', 'url("meio/valverde.png")');
-                        break;
-                }
-            });
-        });
-
-        $(document).ready(function() {
-            $('#atacante1').change(function() {
-                var opcaoSelecionada = $(this).val();
-                
-                switch (opcaoSelecionada) {
-                    case 'opcao0':
-                        $('#atacante1').css('background-image', 'url("padrao.png")');
-                        break;
-                    case 'opcao1':
-                        $('#atacante1').css('background-image', 'url("atacante/pele.png")');
-                        break;
-                    case 'opcao2':
-                        $('#atacante1').css('background-image', 'url("atacante/rivaldo.png")');
-                        break;
-                    case 'opcao3':
-                        $('#atacante1').css('background-image', 'url("atacante/ronaldinho.png")');
-                        break;
-                    case 'opcao4':
-                        $('#atacante1').css('background-image', 'url("atacante/ronaldo.png")');
-                        break;
-                    case 'opcao5':
-                        $('#atacante1').css('background-image', 'url("atacante/vinijr.png")');
-                        break;
-                }
-            });
-        });
+    });
     </script>
 
     <div name="goleiro" class="select-circulo" style="position: absolute; left: 184px; top: 723px;">
         <select id="goleiro">
             <option value="opcao0">NENHUM SELECIONADO</option>
-            <option value="opcao1">ALISSON BECKER</option>
-            <option value="opcao2">BENTO</option>
-            <option value="opcao3">CÁSSIO</option>
+            <option value="opcao1" data-caminhoimagem="goleiro/alisson.png">ALISSON BECKER</option>
+            <option value="opcao2" data-caminhoimagem="goleiro/bento.png">BENTO</option>
+            <option value="opcao3" data-caminhoimagem="goleiro/cassio.png">CÁSSIO</option>
         </select>
     </div>
 
     <div name="lateralesquerdo" class="select-circulo" style="position: absolute; left: 56px; top: 565px;">
         <select id="lateralesquerdo">
             <option value="opcao0">NENHUM SELECIONADO</option>
-            <option value="opcao1">MARCELO</option>
-            <option value="opcao2">ROBERTO CARLOS</option>
+            <option value="opcao1" data-caminhoimagem="lateralesquerdo/marcelo.png">MARCELO</option>
+            <option value="opcao2" data-caminhoimagem="lateralesquerdo/robertocarlos.png">ROBERTO CARLOS</option>
         </select>
     </div>
 
     <div name="zagueiro1" class="select-circulo" style="position: absolute; left: 140px; top: 565px;">
         <select id="zagueiro1">
-            <option value="opcao0">NENHUM SELECIONADO</option>
-            <option value="opcao1">GIL</option>
-            <option value="opcao2">HARRY MAGUIRE</option>
-            <option value="opcao3">MALDINI</option>
-            <option value="opcao4">PIQUÉ</option>
-            <option value="opcao5">SÉRGIO RAMOS</option>
+            <option value="opcao0" >NENHUM SELECIONADO</option>
+            <option value="opcao1" data-caminhoimagem="zagueiro/gil.png" >GIL</option>
+            <option value="opcao2" data-caminhoimagem="zagueiro/harrymaquire.png" >HARRY MAGUIRE</option>
+            <option value="opcao3" data-caminhoimagem="zagueiro/maldini.png"> MALDINI</option>
+            <option value="opcao4" data-caminhoimagem="zagueiro/pique.png" >PIQUÉ</option>
+            <option value="opcao5" data-caminhoimagem="zagueiro/sergioramos.png" >SÉRGIO RAMOS</option>
         </select>
     </div>
 
-    <div name="zagueiro1" class="select-circulo" style="position: absolute; left: 224px; top: 565px;">
-        <select id="zagueiro1">
-            <option value="opcao0">NENHUM SELECIONADO</option>
-            <option value="opcao1">GIL</option>
-            <option value="opcao2">HARRY MAGUIRE</option>
-            <option value="opcao3">MALDINI</option>
-            <option value="opcao4">PIQUÉ</option>
-            <option value="opcao5">SÉRGIO RAMOS</option>
+    <div name="zagueiro2" class="select-circulo" style="position: absolute; left: 224px; top: 565px;">
+        <select id="zagueiro2">
+            <option value="opcao0" >NENHUM SELECIONADO</option>
+            <option value="opcao1" data-caminhoimagem="zagueiro/gil.png" >GIL</option>
+            <option value="opcao2" data-caminhoimagem="zagueiro/harrymaquire.png" >HARRY MAGUIRE</option>
+            <option value="opcao3" data-caminhoimagem="zagueiro/maldini.png"> MALDINI</option>
+            <option value="opcao4" data-caminhoimagem="zagueiro/pique.png" >PIQUÉ</option>
+            <option value="opcao5" data-caminhoimagem="zagueiro/sergioramos.png" >SÉRGIO RAMOS</option>
         </select>
     </div>
 
     <div name="lateraldireito" class="select-circulo" style="position: absolute; left: 308px; top: 565px;">
         <select id="lateraldireito">
             <option value="opcao0">NENHUM SELECIONADO</option>
-            <option value="opcao1">CAFU</option>
-            <option value="opcao2">DANIEL ALVES</option>
+            <option value="opcao1" data-caminhoimagem="lateraldireito/cafu.png" >CAFU</option>
+            <option value="opcao2" data-caminhoimagem="lateraldireito/danielalves.png" >DANIEL ALVES</option>
         </select>
     </div>
 
     <div name="meio1" class="select-circulo" style="position: absolute; left: 90px; top: 423px;">
         <select id="meio1">
             <option value="opcao0">NENHUM SELECIONADO</option>
-            <option value="opcao1">CASEMIRO</option>
-            <option value="opcao2">MODRIC</option>
-            <option value="opcao3">RALF</option>
-            <option value="opcao4">TONI KROOS</option>
-            <option value="opcao5">VALVERDE</option>
+            <option value="opcao1" data-caminhoimagem="meio/casemiro.png" >CASEMIRO</option>
+            <option value="opcao2" data-caminhoimagem="meio/modric.png" >MODRIC</option>
+            <option value="opcao3" data-caminhoimagem="meio/ralf.png" >RALF</option>
+            <option value="opcao4" data-caminhoimagem="meio/tonikroos.png" >TONI KROOS</option>
+            <option value="opcao5" data-caminhoimagem="meio/valverde.png" >VALVERDE</option>
         </select>
     </div>
 
     <div name="meio2" class="select-circulo" style="position: absolute; left: 184px; top: 373px;">
         <select id="meio2">
             <option value="opcao0">NENHUM SELECIONADO</option>
-            <option value="opcao1">CASEMIRO</option>
-            <option value="opcao2">MODRIC</option>
-            <option value="opcao3">RALF</option>
-            <option value="opcao4">TONI KROOS</option>
-            <option value="opcao5">VALVERDE</option>
+            <option value="opcao1" data-caminhoimagem="meio/casemiro.png" >CASEMIRO</option>
+            <option value="opcao2" data-caminhoimagem="meio/modric.png" >MODRIC</option>
+            <option value="opcao3" data-caminhoimagem="meio/ralf.png" >RALF</option>
+            <option value="opcao4" data-caminhoimagem="meio/tonikroos.png" >TONI KROOS</option>
+            <option value="opcao5" data-caminhoimagem="meio/valverde.png" >VALVERDE</option>
         </select>
     </div>
         
     <div name="meio3" class="select-circulo" style="position: absolute; left: 278px; top: 423px;">
         <select id="meio3">
             <option value="opcao0">NENHUM SELECIONADO</option>
-            <option value="opcao1">CASEMIRO</option>
-            <option value="opcao2">MODRIC</option>
-            <option value="opcao3">RALF</option>
-            <option value="opcao4">TONI KROOS</option>
-            <option value="opcao5">VALVERDE</option>
+            <option value="opcao1" data-caminhoimagem="meio/casemiro.png" >CASEMIRO</option>
+            <option value="opcao2" data-caminhoimagem="meio/modric.png" >MODRIC</option>
+            <option value="opcao3" data-caminhoimagem="meio/ralf.png" >RALF</option>
+            <option value="opcao4" data-caminhoimagem="meio/tonikroos.png" >TONI KROOS</option>
+            <option value="opcao5" data-caminhoimagem="meio/valverde.png" >VALVERDE</option>
         </select>
     </div>
 
     <div name="atacante1" class="select-circulo" style="position: absolute; left: 90px; top: 270px;">
         <select id="atacante1">
             <option value="opcao0">NENHUM SELECIONADO</option>
-            <option value="opcao1">PELÉ</option>
-            <option value="opcao2">RIVALDO</option>
-            <option value="opcao3">RONALDINHO</option>
-            <option value="opcao4">RONALDO</option>
-            <option value="opcao5">VINÍCIUS JÚNIOR</option>
+            <option value="opcao1" data-caminhoimagem="atacante/pele.png">PELÉ</option>
+            <option value="opcao2" data-caminhoimagem="atacante/rivaldo.png" >RIVALDO</option>
+            <option value="opcao3" data-caminhoimagem="atacante/ronaldinho.png" >RONALDINHO</option>
+            <option value="opcao4" data-caminhoimagem="atacante/ronaldo.png" >RONALDO</option>
+            <option value="opcao5" data-caminhoimagem="atacante/vinijr.png" >VINÍCIUS JÚNIOR</option>
         </select>
     </div>
 
     <div name="atacante2" class="select-circulo" style="position: absolute; left: 184px; top: 270px;">
         <select id="atacante2">
             <option value="opcao0">NENHUM SELECIONADO</option>
-            <option value="opcao1">PELÉ</option>
-            <option value="opcao2">RIVALDO</option>
-            <option value="opcao3">RONALDINHO</option>
-            <option value="opcao4">RONALDO</option>
-            <option value="opcao5">VINÍCIUS JÚNIOR</option>
+            <option value="opcao1" data-caminhoimagem="atacante/pele.png">PELÉ</option>
+            <option value="opcao2" data-caminhoimagem="atacante/rivaldo.png" >RIVALDO</option>
+            <option value="opcao3" data-caminhoimagem="atacante/ronaldinho.png" >RONALDINHO</option>
+            <option value="opcao4" data-caminhoimagem="atacante/ronaldo.png" >RONALDO</option>
+            <option value="opcao5" data-caminhoimagem="atacante/vinijr.png" >VINÍCIUS JÚNIOR</option>
         </select>
     </div>
         
     <div name="atacante3" class="select-circulo" style="position: absolute; left: 278px; top: 270px;">
         <select id="atacante3">
             <option value="opcao0">NENHUM SELECIONADO</option>
-            <option value="opcao1">PELÉ</option>
-            <option value="opcao2">RIVALDO</option>
-            <option value="opcao3">RONALDINHO</option>
-            <option value="opcao4">RONALDO</option>
-            <option value="opcao5">VINÍCIUS JÚNIOR</option>
+            <option value="opcao1" data-caminhoimagem="atacante/pele.png">PELÉ</option>
+            <option value="opcao2" data-caminhoimagem="atacante/rivaldo.png" >RIVALDO</option>
+            <option value="opcao3" data-caminhoimagem="atacante/ronaldinho.png" >RONALDINHO</option>
+            <option value="opcao4" data-caminhoimagem="atacante/ronaldo.png" >RONALDO</option>
+            <option value="opcao5" data-caminhoimagem="atacante/vinijr.png" >VINÍCIUS JÚNIOR</option>
         </select>
     </div>
 
     <button style="position: absolute; left: 265px; top: 30px;"> Montar time </button>
-    <button style="position: absolute; left: 15px; top: 30px;" class="vermelho"> Limpar</button>
+    <button style="position: absolute; left: 15px; top: 30px;" class="vermelho" id="limpar"> Limpar</button>
 </body>
 </html>
