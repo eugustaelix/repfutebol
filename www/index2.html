@@ -59,11 +59,26 @@
             color: #4CAF50;
             font-size: 24px;
         }
+        button {
+    font-family: "Poppins", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+    box-shadow: 0px 5px 10px #00000033;
+    padding-block: 0.5rem;
+    padding-inline: 1.25rem;
+    border-radius: 9999px;
+    border: none;
+    width: 130px;
+        background-color: #ff013c ;  
+    color: white;  
+  }    
     </style>
 </head>
 <body>
+    <script src="https://kit.fontawesome.com/fe31542f8a.js" crossorigin="anonymous"></script>
+    <button style="position: absolute; left: 265px; top: 10px;" id="Voltar" onclick="window.location.href = 'index.html';"><i class="fa-solid fa-arrow-left"></i>Voltar</button>
     <div class="container">
-        <h1>Jogadores Selecionados</h1>
+        <h1>Jogadores</h1>
         <ul id="jogadores-list"></ul>
     </div>
 
