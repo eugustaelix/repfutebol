@@ -3,16 +3,95 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-    <meta http-equiv="Content-Security-Policy" content="default-src * data: gap: https://ssl.gstatic.com; style-src * 'unsafe-inline'; script-src * 'unsafe-inline' 'unsafe-eval'">
+    <meta http-equiv="Content-Security-Policy" content="default-src * data: gap: content: https://ssl.gstatic.com; style-src * 'unsafe-inline'; script-src * 'unsafe-inline' 'unsafe-eval'">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <link rel="stylesheet" href="components/loader.css">
-    <script src="components/loader.js"></script>
-    <script>
-        //
-        // TODO: Write JavaScript code here
-        //
-    </script>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        body {
+            background-color: #f0f0f0;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 15px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #4CAF50; /* Cor da bola de futebol */
+            margin-bottom: 20px;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+        li {
+            margin-bottom: 20px;
+            padding: 20px;
+            background-color: #f9f9f9;
+            border-radius: 5px;
+            overflow: hidden; /* Para esconder a imagem caso ela seja maior que o elemento pai */
+            position: relative;
+            border-top: 3px solid #4CAF50; /* Adiciona uma borda verde na parte superior */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        li:last-child {
+            margin-bottom: 0;
+        }
+        img {
+            display: block;
+            margin: 0 auto;
+            width: 55px;
+            height: 55px;
+            border-radius: 5px;
+            margin-top: 10px;
+        }
+        .icon {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            color: #4CAF50;
+            font-size: 24px;
+        }
+    </style>
 </head>
 <body>
-    <!-- TODO: Please edit here -->
+    <div class="container">
+        <h1>Jogadores Selecionados</h1>
+        <ul id="jogadores-list"></ul>
+    </div>
+
+    <script>
+        $(document).ready(function() {
+            var urlParams = new URLSearchParams(window.location.search);
+            var jogadoresSelecionados = JSON.parse(decodeURIComponent(urlParams.get('jogadores')));
+
+            var posicoes = ['Goleiro', 'Lateral Esquerdo', 'Zagueiro', 'Zagueiro', 'Lateral Direito', 'Meio', 'Meio', 'Meio', 'Atacante', 'Atacante', 'Atacante'];
+
+            for (var i = 0; i < jogadoresSelecionados.length; i++) {
+                var jogador = jogadoresSelecionados[i];
+                var nomeFormatado = jogador.nome.charAt(0).toUpperCase() + jogador.nome.slice(1).toLowerCase();
+                var listItem = document.createElement('li');
+                listItem.textContent = posicoes[i] + ': ' + nomeFormatado;
+                
+                var imagemJogador = document.createElement('img');
+                imagemJogador.src = jogador.caminhoImagem; 
+                listItem.appendChild(imagemJogador);
+
+                var icon = document.createElement('i');
+                icon.className = 'fa fa-futbol-o icon'; // Adiciona o ícone da bola de futebol
+                listItem.appendChild(icon);
+                
+                document.getElementById('jogadores-list').appendChild(listItem);
+            }
+        });
+    </script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </body>
 </html>

@@ -80,25 +80,28 @@
             });
 
             // Montar seleções
-            $('#montar-time').on('click', function() {
-                var todosSelecionados = true;
-                $('select').each(function() {
-                    if ($(this).val() === 'opcao0') {
-                        todosSelecionados = false;
-                        return false; // Saia do loop se encontrar um não selecionado
-                    }
-                });
+$('#montar-time').on('click', function() {
+    var jogadoresSelecionados = [];
+    $('select').each(function() {
+        var opcaoSelecionada = $(this).val();
+        // Verificar se a opção selecionada não é a padrão e não está desabilitada
+        if (opcaoSelecionada !== 'opcao0' && !$(this).find('option:selected').prop('disabled')) {
+            var jogadorSelecionado = {
+                nome: $(this).find('option:selected').text(),
+                caminhoImagem: $(this).find('option:selected').data('caminhoimagem')
+            };
+            jogadoresSelecionados.push(jogadorSelecionado);
+        }
+    });
 
-                if (todosSelecionados) {
-                    var selecoes = $('select').map(function() {
-                        return $(this).val();
-                    }).get();
-                    var urlParams = selecoes.join('&');
-                    window.location.href = 'index2.html?' + urlParams;
-                } else {
-                    alert('Por favor, selecione uma opção para cada posição.');
-                }
-            });
+    if (jogadoresSelecionados.length === 11) {
+        var urlParams = encodeURIComponent(JSON.stringify(jogadoresSelecionados));
+        window.location.href = 'index2.html?jogadores=' + urlParams;
+    } else {
+        alert('Por favor, selecione uma opção para cada posição.');
+    }
+});
+
         });
     </script>
 
@@ -124,7 +127,7 @@
             <option value="opcao0" selected>NENHUM SELECIONADO</option>
             <option value="opcao1" data-caminhoimagem="zagueiro/gil.png" >GIL</option>
             <option value="opcao2" data-caminhoimagem="zagueiro/harrymaquire.png" >HARRY MAGUIRE</option>
-            <option value="opcao3" data-caminhoimagem="zagueiro/maldini.png"> MALDINI</option>
+            <option value="opcao3" data-caminhoimagem="zagueiro/maldini.png">MALDINI</option>
             <option value="opcao4" data-caminhoimagem="zagueiro/pique.png" >PIQUÉ</option>
             <option value="opcao5" data-caminhoimagem="zagueiro/sergioramos.png" >SÉRGIO RAMOS</option>
         </select>
